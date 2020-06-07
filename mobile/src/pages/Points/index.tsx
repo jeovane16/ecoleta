@@ -22,6 +22,7 @@ interface Item {
 interface Points {
     id: number;
     name: string;
+    image_url: string;
     image: string;
     latitude: number;
     longitude: number;
@@ -29,7 +30,7 @@ interface Points {
 
 const Point = () => {
   const route = useRoute();
-  const routesParams = route.params as Params;
+  const routeParams = route.params as Params;
   const navigate = useNavigation();
   const [items, setItems] = useState<Item[]>([]);
   const [points, setPoints] = useState<Points[]>([]);
@@ -63,25 +64,26 @@ const Point = () => {
   useEffect(()=>{
       api.get("points",{
           params:{
-              city: routesParams.city,
-              uf: routesParams.uf,
+              city: routeParams.city,
+              uf: routeParams.uf,
               items: selectedItems
           }
       }).then(response => {
           setPoints(response.data);
+          
     })
   },[selectedItems]);
 
   function handleNavigateBack() {
     navigate.goBack();
   }
-  
+
   function handleNavigateToDetail(id: number) {
     navigate.navigate('Detail', {point_id: id});
   }
 
   function handleSelectItem(id: number) {
-    const alreadySelected = selectedItems.findIndex(item => item===id);
+      const alreadySelected = selectedItems.findIndex(item => item===id);
     if (alreadySelected >= 0){
       const filteredItems = selectedItems.filter( item => item !== id);
       setSelectedItems(filteredItems);
@@ -90,7 +92,7 @@ const Point = () => {
       setSelectedItems([...selectedItems, id]);
     }
   }
-  
+
   return(
       <>
         <View style={styles.container}>
@@ -109,13 +111,18 @@ const Point = () => {
                       latitudeDelta: 0.014,
                       longitudeDelta: 0.014
                   }}>
-                      {points.map( point => (
-                          <Marker key={String(point.id)} onPress={()=>handleNavigateToDetail(point.id)} style={styles.mapMarker} coordinate={{
+                      {points.map(point => (
+                          <Marker
+                          key={String(point.id)}
+                          style={styles.mapMarker} 
+                          onPress={()=>handleNavigateToDetail(point.id)}
+                          coordinate={{
                               latitude: point.latitude,
                               longitude: point.longitude,
-                          }}>
+                          }}
+                          >
                               <View style={styles.mapMarkerContainer}>
-                                  <Image style={styles.mapMarkerImage} source={{uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT3NpH5hnWbpZD274Vof4cFxD2qhjc2CE8iMB9ronhzckW5XimS&usqp=CAU"}}></Image>
+                                  <Image style={styles.mapMarkerImage} source={{uri: point.image_url }}></Image>
                                   <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                               </View>
                           </Marker>
@@ -145,6 +152,7 @@ const Point = () => {
       </>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
