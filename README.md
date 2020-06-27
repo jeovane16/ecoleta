@@ -7,7 +7,7 @@
     </a>
 </p>
 
-###Sumário
+### Sumário
 
 - [Sobre o Ecoleta](#sobre)
 - [Técnologias](#tecnologias)
