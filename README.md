@@ -68,6 +68,7 @@ Durante o projeto foram usadas várias técnologias:
   $ npm start
 ```
 
+<a id="web"></a>
 ### :computer: Web
 
 <h1 align="center">
@@ -78,6 +79,7 @@ Durante o projeto foram usadas várias técnologias:
     <img src=".github/web2.png">
 </h1>
 
+<a id="mobile"></a>
 ### :iphone: Mobile
 
 <h1 align="center">
