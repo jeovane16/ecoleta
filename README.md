@@ -32,12 +32,15 @@ Durante o projeto foram usadas várias técnologias:
 
 <a id="como-executar"></a>
 ### :question: Como executar
-- ###**Requisitos**
+
+- ### **Requisitos**
+
     - Ter o [Node.js](https://nodejs.org/en/)
     - Ter um gerenciador de pacotes [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
     - Ter o [Expo](https://expo.io/) (instalar de forma global)
 
-- ###Faça um clone
+- ### Faça um clone
+
 ```sh
   $ git clone https://github.com/vitorserrano/ecoleta.git
 ```
