@@ -32,17 +32,17 @@ Durante o projeto foram usadas várias técnologias:
 
 <a id="como-executar"></a>
 ### :question: Como executar
-- ####**Requisitos**
+- ###**Requisitos**
     - Ter o [Node.js](https://nodejs.org/en/)
     - Ter um gerenciador de pacotes [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
     - Ter o [Expo](https://expo.io/) (instalar de forma global)
 
-- ####Faça um clone
+- ###Faça um clone
 ```sh
   $ git clone https://github.com/vitorserrano/ecoleta.git
 ```
 
-- #### Execute os comandos (de preferência na ordem mostrada) 
+- ### Execute os comandos (de preferência na ordem mostrada) 
 
 ```sh
   # Instale as dependências do package.json
@@ -71,7 +71,7 @@ Durante o projeto foram usadas várias técnologias:
     <img src=".github/web1.png">
 </h1>
 
-<h1>
+<h1 align="center">
     <img src=".github/web2.png">
 </h1>
 
@@ -81,6 +81,6 @@ Durante o projeto foram usadas várias técnologias:
     <img src=".github/mobile1.jpeg">
 </h1>
 
-<h1>
+<h1 align="center">
     <img src=".github/mobile2.jpeg">
 </h1>
