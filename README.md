@@ -42,7 +42,7 @@ Durante o projeto foram usadas várias técnologias:
 - ### Faça um clone
 
 ```sh
-  $ git clone https://github.com/vitorserrano/ecoleta.git
+  $ git clone https://github.com/jeovane16/ecoleta.git
 ```
 
 - ### Execute os comandos (de preferência na ordem mostrada) 
